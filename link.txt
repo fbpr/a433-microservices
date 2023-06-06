@@ -1,0 +1,2 @@
+GitHub Packages:
+https://github.com/fbpr/a433-microservices/pkgs/container/a433-microservices
