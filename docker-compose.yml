@@ -1,0 +1,19 @@
+version: "3.8" # schema version
+
+services: # mendefinisikan service
+  item-app: # service pertama
+    image: ghcr.io/fbpr/a433-microservices:v1 # mengambil image dari github packages
+    ports: # mengekspos port
+      - 80:8080 # port mapping 8080 untuk container dan 80 untuk host
+    depends_on: # mengatur urutan ketergantungan antar service
+      item-db: # menentukan service
+        condition: service_started # kondisi service yang diinginkan
+    restart: always # container selalu restart ketika terhenti
+
+  item-db: # service kedua
+    image: mongo:3 # mengambil image mongo tag 3
+    volumes: # memasang volume pada service
+      - app-db:/data/db # menggunakan volume app-db dan memasangnya ke directory /data/db di container
+
+volumes: # mendefinisikan volume
+  app-db: # membuat volume baru bernama app-db
