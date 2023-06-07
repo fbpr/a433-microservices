@@ -14,6 +14,7 @@ services: # mendefinisikan service
     image: mongo:3 # mengambil image mongo tag 3
     volumes: # memasang volume pada service
       - app-db:/data/db # menggunakan volume app-db dan memasangnya ke directory /data/db di container
-
+    restart: always # container selalu restart ketika terhenti
+    
 volumes: # mendefinisikan volume
   app-db: # membuat volume baru bernama app-db
