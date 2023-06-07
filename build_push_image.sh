@@ -15,5 +15,5 @@ echo "login GitHub Packages" # menampilkan teks
 echo "$CR_PAT" | docker login ghcr.io -u "fbpr" --password-stdin # melakukan login ke github packages dengan token
 sleep 2 #jeda 2 detik
 
-echo "push the image" # mengubah nama image 
+echo "push the image" # menampilkan teks
 docker push ghcr.io/fbpr/a433-microservices:v1 # mengunggah hasil build image ke github packages 
