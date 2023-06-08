@@ -14,3 +14,6 @@ RUN mkdir /build; \
 
 EXPOSE 8080
 CMD ["/build/web"]
+
+# menambahkan metadata ke image agar terkoneksi dengan repository
+LABEL org.opencontainers.image.source=https://github.com/fbpr/a433-microservices
